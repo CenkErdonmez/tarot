@@ -8,6 +8,7 @@ type TarotCard = {
   image: string;
   meaning_up: string;
   meaning_rev: string;
+  isReversed?: boolean;
 };
 
 type SpreadType = "single" | "three" | "celtic";
@@ -113,7 +114,7 @@ const Reading = () => {
               {showInterpretation && (
                 <div className="mt-2 text-sm">
                   <p className="text-gray-700">
-                    {getCardInterpretation(card, card.isReversed, position)}
+                    {getCardInterpretation(card, card.isReversed ?? false, position)}
                   </p>
                 </div>
               )}
